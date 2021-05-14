@@ -171,23 +171,93 @@ print("오프라인 스터디모임 날짜는 매월 "+str(d)+"일로 선정되�
 # #맨뒤에서 7번째 끝까지 // 뒤 첫번째자리 -1
 
 #문자열 처리 함수
-python="Python is Amazing"
-print(python.lower()) #전부다 소문자로
-print(python.upper()) #전부다 대문자로
-print(python[0].isupper()) #첫번째자리가 대문자인지 True
-print(python[0].islower()) #첫번째자리가 소문자인지 False
-print(len(python)) #문자길이 //17
-print(python.replace("Python", "Java ")) #문자를 바꿈, Python->Java
+# python="Python is Amazing"
+# print(python.lower()) #전부다 소문자로
+# print(python.upper()) #전부다 대문자로
+# print(python[0].isupper()) #첫번째자리가 대문자인지 True
+# print(python[0].islower()) #첫번째자리가 소문자인지 False
+# print(len(python)) #문자길이 //17
+# print(python.replace("Python", "Java ")) #문자를 바꿈, Python->Java
 
-index=python.index("n") # n이 몇번째 문자위치에 있는지
-print(index) #5번째에 있다
+# index=python.index("n") # n이 몇번째 문자위치에 있는지
+# print(index) #5번째에 있다
 
-index=python.index("n", index+1) #두번째 n이 몇번째위치에 있는지
-print(index)
+# index=python.index("n", index+1) #두번째 n이 몇번째위치에 있는지
+# print(index)
 
-print(python.find("n")) # n이 몇번째 문자위치에 있는지
-print(python.find("Java")) #찾는 문자가 없으면 -1
-# print(python.index("Java")) #error
+# print(python.find("n")) # n이 몇번째 문자위치에 있는지
+# print(python.find("Java")) #찾는 문자가 없으면 -1
+# # print(python.index("Java")) #error
 
-print(python.count("n"))
+# print(python.count("n")) # n이 몇개 있는지
+
+#문자열 포맷
+#방법1
+# print("나는 %d살 입니다." %20) # %d 정수
+# print("나는 %s을 좋아해" % "파이썬") # %s 문자열
+# print("Apple은 %c로 시작해요" % "A") # %c 문자
+
+# print("나는 %s색과 %s색을 좋아해요" %("파란","빨간"))
+
+# #방법2
+# print("나는 {}살입니다.".format(20))
+# print("나는 {}색과 {}색을 좋아해요".format("파란","빨간")) # 중괄호에 순서대로 입력
+# print("나는 {0}색과 {1}색을 좋아해요".format("파란","빨간")) # 중괄호 안 번호대로 입력
+# print("나는 {1}색과 {1}색을 좋아해요".format("파란","빨간"))
+
+#방법3
+# print("나는 {age}살이며, {color}색을 좋아해요.".format(age=29, color="빨간"))
+# print("나는 {age}살이며, {color}색을 좋아해요.".format(age=29, color="빨간"))
+
+#방법4
+# age=20
+# color="빨간"
+
+# print("나는 "+str(age)+"살이며, "+color+"색을 좋아해요.")
+
+# print(f"나는 {age}살이며, {color}색을 좋아해요.")
+#문자열 앞에 f를 붙이면 {}로 변수를 불러낼수 있다.
+
+# #탈출문자
+# # \n : 줄바꿈
+# print("백문이 불여일견 \n 백견이 불여일타")
+
+# # \" : 문장 내 "
+# print("저는 \"나도코딩\"입니다.")
+
+# # \\ : 문장내에서 \
+# print("d:\\PythonWorkspace\\practice.py")
+
+# \r : 커서를 맨 앞으로 이동
+# print("Red Apple\rPine") # 커서 맨 앞으로 이동해서 Red 대신 Pinedl 옴 // PineApple 
+
+# # \b : 백스페이스(한 글자 삭제)
+# print("Red\bApple") # ReApple
+
+# # \t : 탭
+# print("Red\tApple") # Red     Apple
+
+'''
+Q) 사이트별로 비밀번호를 만들어 주는 프로그램을 작성하시오
+예) http://naver.com
+규칙 1: http:// 부분은 제외 => naver.com
+규칙 2: 처음만나는 점(.) 이후 부분은 제외 => naver
+규칙 3: 남은 글자중 처음 세자리(nav) + 글자 갯수(5) + 글자 내 'e' 갯수(1) + "!"(!)로 구성
+
+예) 생성된 비밀번호 : nav51!
+'''
+
+# url="http://naver.com"
+# r1=url[7:] # naver.com
+# index=r1.index(".")
+# r2=r1[:index] # naver
+# r3=r2[:3]+str(len(r2))+str(r2.count("e"))+"!"
+# print(r3)
+
+url="http://daum.net"
+r1=url.replace("http://","")
+r1=r1[:r1.index(".")]
+password=r1[:3]+str(len(r1))+str(r1.count("e"))+"!"
+print("{0}의 비밀번호는 {1}입니다.".format(url,password))
+
 
