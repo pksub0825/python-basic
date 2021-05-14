@@ -131,7 +131,7 @@ print(str(station+p))
 #print(randrange(1,46)) #1~46미만의 임의의 값 생성 / 뒷숫자 포함하지 않음(뒷숫자-1)
 
 #print(randint(1,45)) #1~45이하의 임의의 값을 생성 / 뒷숫자를 포함함
-
+'''
 # Q)당신은 최근에 코딩 스터디 모임을 새로 만들었습니다.
 #월 4회 스터디를 하는데 1번 오프라인의 날짜를 랜덤으로 정하여라
 
@@ -145,3 +145,49 @@ print(str(station+p))
 from random import *
 d=randint(4,28)
 print("오프라인 스터디모임 날짜는 매월 "+str(d)+"일로 선정되었습니다.")
+'''
+#문자열
+# sentence='나는 소녀입니다'
+# print(sentence)
+# sentence2="파이썬은쉬워요"
+# print(sentence2)
+# sentence3="""
+# 나는 소년이고,
+# 파이썬은 쉬워요
+# """
+# print(sentence3)
+
+# #슬라이싱
+# jumin="990120-1234567"
+
+# print("성별 : "+jumin[7])
+# print("연 : "+jumin[0:2]) #0~2번째 자리 직전까지(0,1번째)
+# print("월 : "+jumin[2:4])
+# print("일 : "+jumin[4:6])
+
+# print("생년월일 : "+jumin[:6]) #처음부터 6직전까지
+# print("뒤 7자리 : "+jumin[7:]) #7번째자리부터 끝까지
+# print("뒤 7자리 (뒤에부터) : "+jumin[-7:])
+# #맨뒤에서 7번째 끝까지 // 뒤 첫번째자리 -1
+
+#문자열 처리 함수
+python="Python is Amazing"
+print(python.lower()) #전부다 소문자로
+print(python.upper()) #전부다 대문자로
+print(python[0].isupper()) #첫번째자리가 대문자인지 True
+print(python[0].islower()) #첫번째자리가 소문자인지 False
+print(len(python)) #문자길이 //17
+print(python.replace("Python", "Java ")) #문자를 바꿈, Python->Java
+
+index=python.index("n") # n이 몇번째 문자위치에 있는지
+print(index) #5번째에 있다
+
+index=python.index("n", index+1) #두번째 n이 몇번째위치에 있는지
+print(index)
+
+print(python.find("n")) # n이 몇번째 문자위치에 있는지
+print(python.find("Java")) #찾는 문자가 없으면 -1
+# print(python.index("Java")) #error
+
+print(python.count("n"))
+
